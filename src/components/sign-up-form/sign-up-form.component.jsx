@@ -4,8 +4,10 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
+
+import "./sign-up-form.styles.scss";
 
 const defaultFormFields = {
   displayName: "",
@@ -47,7 +49,7 @@ const SignUpForm = () => {
     }
   };
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
 
     setFormFields({ ...formFields, [name]: value });
