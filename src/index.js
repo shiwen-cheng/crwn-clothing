@@ -6,6 +6,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { UserProvider } from "./contexts/user.context";
+import { ProductsProvider } from "./contexts/products.context";
 
 import "./index.scss";
 
@@ -14,7 +15,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <App />
+        <ProductsProvider>
+          <App />
+        </ProductsProvider>
+        {/* 因为 想让 ProductsProvider 访问得到 user 的信息，所以把它放在 user 里面 */}
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
