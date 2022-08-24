@@ -7,6 +7,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import { UserProvider } from "./contexts/user.context";
 import { ProductsProvider } from "./contexts/products.context";
+import { CartProvider } from "./contexts/cart.context";
 
 import "./index.scss";
 
@@ -16,7 +17,9 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <ProductsProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </ProductsProvider>
         {/* 因为 想让 ProductsProvider 访问得到 user 的信息，所以把它放在 user 里面 */}
       </UserProvider>
