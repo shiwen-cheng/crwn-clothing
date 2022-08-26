@@ -37,7 +37,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     cartItem.id === cartItemToRemove.id
       ? { ...cartItem, quantity: cartItem.quantity - 1 }
       : cartItem
-  ); // 否则数量减一
+  ); // 否则数量减 1
 };
 
 export const CartContext = createContext({
